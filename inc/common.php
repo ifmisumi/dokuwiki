@@ -1163,7 +1163,10 @@ function parsePageTemplate(&$data)
             '@USER@',
             '@NAME@',
             '@MAIL@',
-            '@DATE@'
+            '@DATE@',
+            '@YEAR@',
+            '@MONTH@',
+            '@DAY@'
         ],
         [
             $id,
@@ -1182,7 +1185,10 @@ function parsePageTemplate(&$data)
             $INPUT->server->str('REMOTE_USER'),
             $USERINFO ? $USERINFO['name'] : '',
             $USERINFO ? $USERINFO['mail'] : '',
-            $conf['dformat']
+            $conf['dformat'],
+            '%Y',
+            '%m',
+            '%d'
         ],
         $tpl
     );
